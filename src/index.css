@@ -1,0 +1,99 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Romanesco&family=UnifrakturMaguntia&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Gideon+Roman&display=swap');
+
+
+@import "tailwindcss";
+
+/* Horizontal scroll */
+@keyframes marquee {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }  /* move by half = one copy width */
+}
+
+/* Vertical scroll upward */
+@keyframes marquee-vertical-up {
+  0%   { transform: translateY(0); }
+  100% { transform: translateY(-50%); }  /* move by half = one copy height */
+}
+
+/* Vertical scroll downward */
+@keyframes marquee-vertical-down {
+  0%   { transform: translateY(-50%); }
+  100% { transform: translateY(0); }
+}
+
+/* Animation utility classes */
+.animate-marquee {
+  display: flex;
+  width: 200%;               /* two horizontal copies */
+  animation: marquee 30s linear infinite;
+}
+
+.animate-marquee-vertical {
+  display: flex;
+  flex-direction: column;     /* two vertical copies */
+  height: 200%;
+}
+
+.animate-marquee-vertical-left {
+  animation: marquee-vertical-up 30s linear infinite;
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  transform: rotate(180deg);  /* makes text readable upward */
+}
+
+.animate-marquee-vertical-right {
+  animation: marquee-vertical-down 30s linear infinite;
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+}
+
+/* Downward scroll (top → bottom) */
+@keyframes marquee-vertical-down {
+  0%   { transform: translateY(-50%); }
+  100% { transform: translateY(0); }
+}
+
+/* New class for left side inward-facing downward scroll */
+.animate-marquee-vertical-left-inward {
+  animation: marquee-vertical-down 30s linear infinite;
+  writing-mode: vertical-rl;   /* vertical text */
+  text-orientation: mixed;
+  /* rotate so viewer on the right can read it inward */
+  transform: rotate(180deg);   /* ← letters face center */
+}
+
+
+/* // cars */
+
+@keyframes marquee-ltr {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100vw); }
+}
+
+@keyframes marquee-rtl {
+  0% { transform: translateX(100vw); }
+  100% { transform: translateX(-100%); }
+}
+
+.animate-marquee-ltr {
+  /* You can change the duration (25s) to make it faster or slower */
+  animation: marquee-ltr 5s linear infinite;
+}
+
+.animate-marquee-rtl {
+  /* Using a slightly different duration for variety */
+  animation: marquee-rtl 5s linear infinite;
+}
+
+
+
+
+
+
+
+
+
+
+
